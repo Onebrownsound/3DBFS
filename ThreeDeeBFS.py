@@ -65,10 +65,10 @@ def custombfs(graph,start):
         node = path[-1]
         pos = node.pos   #gets the posistion for which we will apply all possible legal "moves"
 
-        for move in moves:
+        for move in moves: #iterates through the bank of "moves" 
             if not (0 <= pos[0] + move[0] < length and 0 <= pos[1] + move[1] < length and 0 <= pos[2]+move[2]<length): #cycles through moves list and decides whether legal or illegal
                 continue
-            neighbor = graph[pos[0] + move[0]] [pos[1] + move[1]][pos[2]+move[2]]
+            neighbor = graph[pos[0] + move[0]] [pos[1] + move[1]][pos[2]+move[2]] 
             if neighbor.val == 'E':
                 return path + [neighbor]
             elif neighbor.val == '.' and not neighbor.visited:
